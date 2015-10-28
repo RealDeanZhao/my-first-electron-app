@@ -3,7 +3,6 @@ var ipc = require('ipc');
 var BrowserWindow = require('browser-window');
 var http = require('http');
 var mainWindow = null;
-var iconv = require('iconv-lite');
 var request = require('request');
 var ipc = require('ipc');
 app.on('ready', function () {
