@@ -1,0 +1,19 @@
+{
+  "name": "multi-window-electron-desktop-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "electron-prebuilt": "^0.34.1"
+  },
+  "devDependencies": {
+    "html2hscript": "^1.2.0",
+    "lodash": "^3.10.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC"
+}
