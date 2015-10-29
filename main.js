@@ -1,13 +1,12 @@
 var request = require('request');
 var ipc = require('ipc');
-var _ = require('lodash');
 var h = require('virtual-dom/h');
 var diff = require('virtual-dom/diff');
 var patch = require('virtual-dom/patch');
 var createElement = require('virtual-dom/create-element');
 var baseUrl = 'http://xueqiu.com/';
 var options = {
-	//proxy: 'http://web-proxy.atl.hp.com:8080',
+	proxy: 'http://web-proxy.atl.hp.com:8080',
 	url: 'http://xueqiu.com/cubes/rebalancing/history.json?cube_symbol=ZH214777&count=20&page=1',
 	headers: {
 		'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36',

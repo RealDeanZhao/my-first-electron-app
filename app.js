@@ -8,8 +8,7 @@ var ipc = require('ipc');
 app.on('ready', function () {
 	mainWindow = new BrowserWindow({
 		width: 800,
-		height: 600,
-		frame: false
+		height: 600
 	});
 	mainWindow.loadUrl('file://' + __dirname + '/main.html');
 	//mainWindow.openDevTools();
