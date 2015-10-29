@@ -19,8 +19,8 @@ Date.prototype.Format = function (fmt) {
 		"M+": this.getMonth() + 1,
 		"d+": this.getDate(),
 		"h+": this.getHours(),
-		"m+": this.getMinutes(), 
-		"s+": this.getSeconds(), 
+		"m+": this.getMinutes(),
+		"s+": this.getSeconds(),
 		"q+": Math.floor((this.getMonth() + 3) / 3),
 		"S": this.getMilliseconds()
 	};
@@ -79,13 +79,13 @@ function render(json) {
 	}
 	var div = h('div.history-list', { style: { left: '0px' } }, uls);
 	var lastCheckTime = new Date();
-	var div2 = h('div', { style: { 'text-align': 'center' } }, [h('div', {}, lastCheckTime.toString()), [div]]);
+	var div2 = h('div', {}, [h('div', { style: { 'text-align': 'center' } }, lastCheckTime.toString()), [div]]);
 	return div2;
 }
 
 var tree = h('div.cube-block fn-clear', {}, []);
-var rootNode = createElement(tree);    	
-document.body.appendChild(rootNode);   
+var rootNode = createElement(tree);
+document.body.appendChild(rootNode);
 
 var firstBalanceId = 0;
 var count = 0;
