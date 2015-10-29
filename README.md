@@ -1,2 +1,3 @@
 # my-first-electron-app
-1
+## npm install
+### npm start
