@@ -46,7 +46,7 @@ function render(json) {
 		var createAtString = new Date(i.created_at).Format('hh:mm:ss');
 		var firstLi = h('li.rebalance-time.fn-clear.first', {}, [
 			h('span.date', {}, createAtDate),
-			h('span.status', {}, ''),
+			h('span.status', {}, i.status),
 			h('span.time', {}, createAtString),
 			h('span.tri', {}, i.stock_name)
 		]);
