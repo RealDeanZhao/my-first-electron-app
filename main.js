@@ -31,17 +31,7 @@ Date.prototype.Format = function (fmt) {
 }
 function render(json) {
 	var uls = [];
-	var index = 0;
 	for (var i of json.list) {
-		if (index === 0) {
-			if (firstBalanceId !== 0 && firstBalanceId != i.id) {
-				ipc.send('new-balance-history', i.id);
-				firstBalanceId = i.id;
-			} else {
-				ipc.send('no-balance-history', i.id);
-			}
-			index++;
-		}
 		var createAtDate = new Date(i.created_at).Format('yyyy-MM-dd');
 		var createAtString = new Date(i.created_at).Format('hh:mm:ss');
 		var firstLi = h('li.rebalance-time.fn-clear.first', {}, [
@@ -87,8 +77,6 @@ var tree = h('div.cube-block fn-clear', {}, []);
 var rootNode = createElement(tree);
 document.body.appendChild(rootNode);
 
-var firstBalanceId = 0;
-var count = 0;
 GetData();
 function GetData() {
 	var message = '';
@@ -103,6 +91,11 @@ function GetData() {
 			var result = JSON.parse(message);
 			var newTree = render(result);
 			var patches = diff(tree, newTree);
+			if (patches[0] === undefined) {
+				ipc.send('no-balance-history');
+			} else {
+				ipc.send('new-balance-history');
+			}
 			rootNode = patch(rootNode, patches);
 			tree = newTree;
 		});

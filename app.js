@@ -13,10 +13,10 @@ app.on('ready', function () {
 	mainWindow.loadUrl('file://' + __dirname + '/main.html');
 	//mainWindow.openDevTools();
 
-	ipc.on('new-balance-history', function (event, count) {
+	ipc.on('new-balance-history', function (event) {
 		mainWindow.setProgressBar(1);
 	});
-	ipc.on('no-balance-history', function (event, count) {
+	ipc.on('no-balance-history', function (events) {
 		mainWindow.setProgressBar(0.5);
 	});
 	mainWindow.on('focus', function () {
